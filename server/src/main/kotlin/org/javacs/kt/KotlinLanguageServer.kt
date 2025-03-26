@@ -94,6 +94,7 @@ class KotlinLanguageServer(
         serverCapabilities.executeCommandProvider = ExecuteCommandOptions(ALL_COMMANDS)
         serverCapabilities.documentHighlightProvider = Either.forLeft(true)
         serverCapabilities.implementationProvider = Either.forLeft(true)
+        serverCapabilities.codeLensProvider = CodeLensOptions(true)
 
         val storagePath = getStoragePath(params)
         databaseService.setup(storagePath)
